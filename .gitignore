@@ -1,0 +1,7 @@
+# config files
+.vscode
+
+
+# cache files
+.mypy_cache/
+__pycache__/
