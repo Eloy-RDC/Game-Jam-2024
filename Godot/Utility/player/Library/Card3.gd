@@ -4,6 +4,7 @@ var cardname = "Case shield"
 var type = "defense"
 var shield = 7
 var target = "player"
+@onready var player = $"../../Player"
 
 func use():
-	get_tree().root.get_node("Player").shield += shield
+	player.shield += shield

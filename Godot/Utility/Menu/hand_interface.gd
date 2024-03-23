@@ -6,9 +6,15 @@ extends Control
 @onready var hand = []
 @onready var handCards = []
 @onready var buttons = [$HandCard1, $HandCard2, $HandCard3]
+@onready var enemy1 = $"../../enemy1"
+@onready var enemy2 = $"../../enemy2"
+@onready var enemy3 = $"../../enemy3"
+@onready var player = $"../../Player"
 
 
 func _ready():
+	show()
+	print(lib)
 	deck.shuffle()
 	for i in range(3):
 		handCards.append(lib[deck[i]])
@@ -16,15 +22,17 @@ func _ready():
 
 
 func _on_hand_card_1_pressed():
-	handCards[0].use()
-	print("Card 1 played")
+	print(enemy1.hp)
+	lib[1].use()
+	print(enemy1.hp)
+	hide()
 
 
 func _on_hand_card_2_pressed():
 	handCards[1].use()
-	print("Card 2 played")
+	hide()
 
 
 func _on_hand_card_3_pressed():
 	handCards[2].use()
-	print("Card 3 played")
+	hide()
