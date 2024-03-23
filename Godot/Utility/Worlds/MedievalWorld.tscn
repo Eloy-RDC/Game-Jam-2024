@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfoe2hot3m6hj"]
+[gd_scene load_steps=7 format=3 uid="uid://ccbyy1qnd1els"]
 
 [ext_resource type="Script" path="res://Utility/Worlds/medieval_world.gd" id="1_3xrv5"]
 [ext_resource type="Texture2D" uid="uid://cxecgkl57cnmu" path="res://Texture/STSLev2-BruceBrenneise.jpg" id="1_chn7i"]
-[ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/Player/Player.tscn" id="2_wslm8"]
+[ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/Player/player.tscn" id="2_wslm8"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy1.gd" id="3_yqnaw"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy2.gd" id="4_lhp5a"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy3.gd" id="5_1lk4q"]
