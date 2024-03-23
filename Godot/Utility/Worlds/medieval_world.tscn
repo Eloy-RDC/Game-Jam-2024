@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/player/player.tscn" id="2_wslm8"]
 
 [node name="MedievalWorld" type="Node2D"]
+metadata/_edit_lock_ = true
 
 [node name="BackGround" type="Sprite2D" parent="."]
 position = Vector2(581, 329)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_chn7i")
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_wslm8")]
-position = Vector2(1110.75, 424.084)
+metadata/_edit_lock_ = true
