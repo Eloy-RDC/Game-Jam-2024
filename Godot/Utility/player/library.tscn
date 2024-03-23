@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://5egfsf5cs0r4"]
+[gd_scene load_steps=7 format=3 uid="uid://5egfsf5cs0r4"]
 
-[ext_resource type="Script" path="res://Card1.gd" id="1_7kmmc"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card0.gd" id="1_7kmmc"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card1.gd" id="2_eoieu"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card2.gd" id="3_5syv1"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card3.gd" id="4_6232b"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card4.gd" id="5_6rk4a"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card5.gd" id="6_nhbsd"]
 
 [node name="Library" type="Node2D"]
 
@@ -10,5 +15,26 @@ script = ExtResource("1_7kmmc")
 [node name="Sprite2D" type="Sprite2D" parent="Card0"]
 
 [node name="Card1" type="Node2D" parent="."]
+script = ExtResource("2_eoieu")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card1"]
+
+[node name="Card2" type="Node2D" parent="."]
+script = ExtResource("3_5syv1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Card2"]
+
+[node name="Card3" type="Node2D" parent="."]
+script = ExtResource("4_6232b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Card3"]
+
+[node name="Card4" type="Node2D" parent="."]
+script = ExtResource("5_6rk4a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Card4"]
+
+[node name="Card5" type="Node2D" parent="."]
+script = ExtResource("6_nhbsd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Card5"]
