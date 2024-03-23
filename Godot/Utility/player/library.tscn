@@ -1,40 +1,152 @@
-[gd_scene load_steps=7 format=3 uid="uid://5egfsf5cs0r4"]
+[gd_scene load_steps=12 format=3 uid="uid://5egfsf5cs0r4"]
 
-[ext_resource type="Script" path="res://Utility/player/Library/Card0.gd" id="1_7kmmc"]
-[ext_resource type="Script" path="res://Utility/player/Library/Card1.gd" id="2_eoieu"]
-[ext_resource type="Script" path="res://Utility/player/Library/Card2.gd" id="3_5syv1"]
-[ext_resource type="Script" path="res://Utility/player/Library/Card3.gd" id="4_6232b"]
-[ext_resource type="Script" path="res://Utility/player/Library/Card4.gd" id="5_6rk4a"]
-[ext_resource type="Script" path="res://Utility/player/Library/Card5.gd" id="6_nhbsd"]
+[ext_resource type="Texture2D" uid="uid://cm7g1n6a3qs3n" path="res://Texture/MailTrashTalk.webp" id="1_e8lbh"]
+[ext_resource type="Texture2D" uid="uid://bf3mguako62aa" path="res://Texture/ThrowingCase.png" id="2_24p17"]
+[ext_resource type="Texture2D" uid="uid://cjyecumttysh0" path="res://Texture/TieWhip.webp" id="3_vovbk"]
+[ext_resource type="Texture2D" uid="uid://46bt4s75000k" path="res://Texture/CardTemplate.webp" id="4_rvp6w"]
+
+[sub_resource type="GDScript" id="GDScript_3jf83"]
+script/source = "extends Node2D
+
+var lib
+
+func _ready():
+	lib = get_children()
+"
+
+[sub_resource type="GDScript" id="GDScript_rklt3"]
+script/source = "extends Node2D
+
+
+var cardname = \"Mail Trash Talk\"
+var type = \"attack\"
+var damage = 6
+var target = \"far\"
+@onready var sprite = load(\"res://Texture/MailTrashTalk.webp\")
+
+func use():
+	print(\"Card 0 used\")
+	#if get_tree().root.get_node(\"Enemy3\").alive:
+		#get_tree().root.get_node(\"Enemy3\").hp -= damage
+	#elif get_tree().root.get_node(\"Enemy2\").alive:
+		#get_tree().root.get_node(\"Enemy2\").hp -= damage
+	#else: get_tree().root.get_node(\"Enemy1\").hp -= damage
+"
+
+[sub_resource type="GDScript" id="GDScript_1slaf"]
+script/source = "extends Node2D
+
+var cardname = \"Case throw\"
+var type = \"attack\"
+var damage = 6
+var target = \"middle\"
+@onready var sprite = preload(\"res://Texture/ThrowingCase.png\")
+
+func use():
+	print(\"Card 3 used\")
+	#get_tree().root.get_node(\"Ennemy2\").hp -= damage
+"
+
+[sub_resource type="GDScript" id="GDScript_uosfl"]
+script/source = "extends Node2D
+
+var cardname = \"Tie whip\"
+var type = \"attack\"
+var damage = 6
+var target = \"close\"
+@onready var sprite = preload(\"res://Texture/TieWhip.webp\")
+
+func use():
+	print(\"Card 2 used\")
+	#if get_tree().root.get_node(\"Enemy1\").alive:
+		#get_tree().root.get_node(\"Enemy1\").hp -= damage
+	#elif get_tree().root.get_node(\"Enemy2\").alive:
+		#get_tree().root.get_node(\"Enemy2\").hp -= damage
+	#else: get_tree().root.get_node(\"Enemy3\").hp -= damage
+"
+
+[sub_resource type="GDScript" id="GDScript_qkktc"]
+script/source = "extends Node2D
+
+var cardname = \"Case shield\"
+var type = \"defense\"
+var shield = 7
+var target = \"player\"
+@onready var sprite = preload(\"res://Texture/CardTemplate.webp\")
+
+func use():
+	print(\"Card 3 used\")
+	#get_tree().root.get_node(\"Player\").shield += shield
+"
+
+[sub_resource type="GDScript" id="GDScript_r7mex"]
+script/source = "extends Node2D
+
+var cardname = \"Therapy call\"
+var type = \"defense\"
+var shield = 3
+var target = \"player\"
+@onready var sprite = preload(\"res://Texture/CardTemplate.webp\")
+
+func use():
+	print(\"Card 4 used\")
+	#get_tree().root.get_node(\"Player\").shield += shield
+	#get_tree().root.get_node(\"Player\").nextturn_shield += shield
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_plkuf"]
+script/source = "extends Node2D
+
+var cardname = \"Mental breakdown\"
+var type = \"attack\"
+var damage = 1
+var target = \"all\"
+@onready var sprite = preload(\"res://Texture/CardTemplate.webp\")
+
+func use():
+	print(\"Card 5 used\")
+	#get_tree().root.get_node(\"Ennemy1\").hp -= damage
+	#get_tree().root.get_node(\"Ennemy2\").hp -= damage
+	#get_tree().root.get_node(\"Ennemy3\").hp -= damage
+	#get_tree().root.get_node(\"Player\").hp -= damage
+"
 
 [node name="Library" type="Node2D"]
+script = SubResource("GDScript_3jf83")
 
 [node name="Card0" type="Node2D" parent="." groups=["attack", "base"]]
-script = ExtResource("1_7kmmc")
+script = SubResource("GDScript_rklt3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card0"]
+texture = ExtResource("1_e8lbh")
 
 [node name="Card1" type="Node2D" parent="."]
-script = ExtResource("2_eoieu")
+script = SubResource("GDScript_1slaf")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card1"]
+texture = ExtResource("2_24p17")
 
 [node name="Card2" type="Node2D" parent="."]
-script = ExtResource("3_5syv1")
+script = SubResource("GDScript_uosfl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card2"]
+texture = ExtResource("3_vovbk")
 
 [node name="Card3" type="Node2D" parent="."]
-script = ExtResource("4_6232b")
+script = SubResource("GDScript_qkktc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card3"]
+texture = ExtResource("4_rvp6w")
 
 [node name="Card4" type="Node2D" parent="."]
-script = ExtResource("5_6rk4a")
+script = SubResource("GDScript_r7mex")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card4"]
+texture = ExtResource("4_rvp6w")
 
 [node name="Card5" type="Node2D" parent="."]
-script = ExtResource("6_nhbsd")
+script = SubResource("GDScript_plkuf")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card5"]
+texture = ExtResource("4_rvp6w")

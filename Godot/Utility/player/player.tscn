@@ -1,9 +1,31 @@
 [gd_scene load_steps=8 format=3 uid="uid://cd08rjf45ahrc"]
 
 [ext_resource type="Texture2D" uid="uid://bre2x3502585a" path="res://Texture/WorkerIdle-Sheet.png" id="1_85o6c"]
-[ext_resource type="Script" path="res://Utility/player/player.gd" id="1_oyd1b"]
 [ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="2_ypi4y"]
 [ext_resource type="PackedScene" uid="uid://5egfsf5cs0r4" path="res://Utility/Player/Library.tscn" id="3_egowr"]
+
+[sub_resource type="GDScript" id="GDScript_77saw"]
+script/source = "extends Node2D
+
+var hp = 40
+var shield = 0
+var nextturn_shield = 0
+var player_turn = 0
+
+func are_nextturn_shield():
+	if nextturn_shield > 0:
+		shield += nextturn_shield
+		nextturn_shield = 0
+
+
+# turn based combat
+func battle():
+	var victory = 0 # 1 = player wins; -1 = player loses
+	while victory == 0:
+		
+		# player's turn
+		pass
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pq8hl"]
 atlas = ExtResource("1_85o6c")
@@ -28,7 +50,7 @@ animations = [{
 }]
 
 [node name="Player" type="Node2D"]
-script = ExtResource("1_oyd1b")
+script = SubResource("GDScript_77saw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -46,3 +68,4 @@ flip_h = true
 [node name="HandInterface" parent="GUI" instance=ExtResource("2_ypi4y")]
 
 [node name="Library" parent="." instance=ExtResource("3_egowr")]
+unique_name_in_owner = true
