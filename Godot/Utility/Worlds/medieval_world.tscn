@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfoe2hot3m6hj"]
 
 [ext_resource type="Texture2D" uid="uid://cxecgkl57cnmu" path="res://Texture/STSLev2-BruceBrenneise.jpg" id="1_chn7i"]
-[ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/Player/player.tscn" id="2_wslm8"]
+[ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/player/player.tscn" id="2_wslm8"]
 
 [node name="MedievalWorld" type="Node2D"]
 

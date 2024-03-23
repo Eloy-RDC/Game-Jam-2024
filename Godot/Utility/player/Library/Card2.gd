@@ -6,4 +6,8 @@ var damage = 6
 var target = "close"
 
 func use():
-	get_tree().root.get_node("Ennemy1").hp -= damage
+	if get_tree().root.get_node("Enemy1").alive:
+		get_tree().root.get_node("Enemy1").hp -= damage
+	elif get_tree().root.get_node("Enemy2").alive:
+		get_tree().root.get_node("Enemy2").hp -= damage
+	else: get_tree().root.get_node("Enemy3").hp -= damage
