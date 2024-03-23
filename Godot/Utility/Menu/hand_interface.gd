@@ -7,21 +7,26 @@ extends Control
 @onready var Card3 = %Card3
 
 
-
-@onready var Icon_list = [preload("res://Texture/YellowSquare.png")]
+@onready var Cards = [Card1, Card2, Card3]
+@onready var Icon_list = [
+	preload("res://Texture/YellowSquare.png"),
+	preload("res://Texture/YellowSquare.png"),
+	preload("res://Texture/YellowSquare.png")
+]
 
 func _ready():
-	Card1.visible = true
-	Card1.icon = Icon_list[0]
+	for i in Cards.size():
+		Cards[i].visible = true
+		Cards[i].icon = Icon_list[i]
 
 
 func _on_card_1_pressed():
-	pass # Replace with function body.
+	print("Card1 pressed")
 
 
 func _on_card_2_pressed():
-	pass # Replace with function body.
+	print("Card2 pressed")
 
 
 func _on_card_3_pressed():
-	pass # Replace with function body.
+	print("Card3 pressed")
