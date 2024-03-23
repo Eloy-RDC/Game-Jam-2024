@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd08rjf45ahrc"]
+
+[ext_resource type="Texture2D" path="res://Texture/Player/WorkerIdle-Sheet.png" id="1_d3sx2"]
+[ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="2_ypi4y"]
+[ext_resource type="PackedScene" path="res://Utility/Player/library.tscn" id="3_egowr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b23wo"]
+atlas = ExtResource("1_d3sx2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjxfu"]
+atlas = ExtResource("1_d3sx2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqohc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b23wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjxfu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(389, -82)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qqohc")
+frame_progress = 0.589927
+flip_h = true
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HandInterface" parent="GUI" instance=ExtResource("2_ypi4y")]
+
+[node name="Library" parent="." instance=ExtResource("3_egowr")]

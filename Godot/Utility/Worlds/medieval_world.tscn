@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfoe2hot3m6hj"]
+[gd_scene load_steps=2 format=3 uid="uid://bfoe2hot3m6hj"]
 
 [ext_resource type="Texture2D" uid="uid://cxecgkl57cnmu" path="res://Texture/STSLev2-BruceBrenneise.jpg" id="1_chn7i"]
-[ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="2_fbl1c"]
 
 [node name="MedievalWorld" type="Node2D"]
 
@@ -9,12 +8,3 @@
 position = Vector2(581, 329)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_chn7i")
-
-[node name="HandInterface" parent="." instance=ExtResource("2_fbl1c")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-size_flags_horizontal = 4
-size_flags_vertical = 4

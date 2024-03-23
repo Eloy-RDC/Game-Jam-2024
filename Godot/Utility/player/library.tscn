@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://5egfsf5cs0r4"]
+
+[ext_resource type="Script" path="res://Card1.gd" id="1_7kmmc"]
+
+[node name="Library" type="Node2D"]
+
+[node name="Card0" type="Node2D" parent="." groups=["attack", "base"]]
+script = ExtResource("1_7kmmc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Card0"]
+
+[node name="Card1" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Card1"]
