@@ -1,7 +1,2 @@
-# config files
-.vscode
-
-
-# cache files
-.mypy_cache/
-__pycache__/
+# Godot 4+ specific ignores
+.godot/
