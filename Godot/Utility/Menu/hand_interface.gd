@@ -20,8 +20,8 @@ func _on_card_1_pressed():
 
 
 func _on_card_2_pressed():
-	print("Button 1 pressed")
+	print("Button 2 pressed")
 
 
 func _on_card_3_pressed():
-	print("Button 1 pressed")
+	print("Button 3 pressed")
