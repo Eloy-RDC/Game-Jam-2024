@@ -18,6 +18,8 @@ func block():
 
 
 func attack():
+	$Sprite2D.play("attack")
+	%ImpactAnim.play("impact")
 	if(player.shield > 0):
 		player.shield -= attack_points
 		if (player.shield<0):

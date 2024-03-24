@@ -12,6 +12,10 @@ func _process(_delta):
 
 
 func attack():
+	await get_tree().create_timer(0.3).timeout
+	$Sprite2D.play("attack")
+	await get_tree().create_timer(0.1).timeout
+	%ArrowAnim.play("Arrow")
 	print("{name} attacked".format([["name", enemy_name]]))
 
 
