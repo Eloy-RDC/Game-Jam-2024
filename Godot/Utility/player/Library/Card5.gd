@@ -4,32 +4,32 @@ var cardname = "Mental breakdown"
 var type = "attack"
 var damage = 1
 var target = "all"
-@onready var enemy1 = $"../../enemy1"
-@onready var enemy2 = $"../../enemy2"
-@onready var enemy3 = $"../../enemy3"
+@onready var enemyClose = $"../../enemyClose"
+@onready var enemyMiddle = $"../../enemyMiddle"
+@onready var enemyFar = $"../../enemyFar"
 @onready var player = $"../../Player"
 
 func use():
 	
-	if(enemy1.shield >0):
-		enemy1.shield -= damage
-		if (enemy1.shield<0):
-			enemy1.hp += enemy1.shield
-			enemy1.shield = 0
-	else: enemy1.hp -= damage
+	if(enemyClose.shield >0):
+		enemyClose.shield -= damage
+		if (enemyClose.shield<0):
+			enemyClose.hp += enemyClose.shield
+			enemyClose.shield = 0
+	else: enemyClose.hp -= damage
 	
-	if(enemy2.shield >0):
-		enemy2.shield -= damage
-		if (enemy2.shield<0):
-			enemy2.hp += enemy2.shield
-			enemy2.shield = 0
-	else: enemy2.hp -= damage
+	if(enemyMiddle.shield >0):
+		enemyMiddle.shield -= damage
+		if (enemyMiddle.shield<0):
+			enemyMiddle.hp += enemyMiddle.shield
+			enemyMiddle.shield = 0
+	else: enemyMiddle.hp -= damage
 	
-	if(enemy3.shield >0):
-		enemy3.shield -= damage
-		if (enemy3.shield<0):
-			enemy3.hp += enemy3.shield
-			enemy3.shield = 0
-	else: enemy3.hp -= damage
+	if(enemyFar.shield >0):
+		enemyFar.shield -= damage
+		if (enemyFar.shield<0):
+			enemyFar.hp += enemyFar.shield
+			enemyFar.shield = 0
+	else: enemyFar.hp -= damage
 	
 	player.hp -= damage

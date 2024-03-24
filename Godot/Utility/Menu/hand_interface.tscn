@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq1a2utcib7oo"]
+[gd_scene load_steps=2 format=3 uid="uid://cq1a2utcib7oo"]
 
 [ext_resource type="Script" path="res://Utility/Menu/hand_interface.gd" id="1_mqbiy"]
-[ext_resource type="Texture2D" uid="uid://crgci0gcf3vyv" path="res://Texture/YellowSquare.png" id="2_yhcdx"]
 
 [node name="HandInterface" type="Control"]
 layout_mode = 3
@@ -30,7 +29,6 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
-texture_normal = ExtResource("2_yhcdx")
 
 [node name="HandCard2" type="TextureButton" parent="."]
 layout_mode = 1

@@ -1,14 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch4xlgkm7w8oa"]
+[gd_scene load_steps=9 format=3 uid="uid://ch4xlgkm7w8oa"]
 
 [ext_resource type="Texture2D" uid="uid://cxecgkl57cnmu" path="res://Texture/STSLev2-BruceBrenneise.jpg" id="1_chn7i"]
-[ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/Player/player.tscn" id="2_wslm8"]
+[ext_resource type="Script" path="res://Utility/Worlds/medieval_world.gd" id="1_e5cdy"]
+[ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/player/player.tscn" id="2_wslm8"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy1.gd" id="3_yqnaw"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy2.gd" id="4_lhp5a"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy3.gd" id="5_1lk4q"]
 [ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="6_jhh7g"]
-[ext_resource type="PackedScene" uid="uid://5egfsf5cs0r4" path="res://Utility/Player/library.tscn" id="7_qycw8"]
+[ext_resource type="PackedScene" uid="uid://5egfsf5cs0r4" path="res://Utility/player/library.tscn" id="7_qycw8"]
 
 [node name="MedievalWorld" type="Node2D"]
+script = ExtResource("1_e5cdy")
 metadata/_edit_lock_ = true
 
 [node name="BackGround" type="Sprite2D" parent="."]
@@ -20,21 +22,20 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." instance=ExtResource("2_wslm8")]
 metadata/_edit_lock_ = true
 
-[node name="enemy1" type="Node2D" parent="."]
-unique_name_in_owner = true
+[node name="enemyClose" type="Node2D" parent="."]
 script = ExtResource("3_yqnaw")
 
-[node name="Sprite2D" type="Sprite2D" parent="enemy1"]
+[node name="Sprite2D" type="Sprite2D" parent="enemyClose"]
 
-[node name="enemy2" type="Node2D" parent="."]
+[node name="enemyMiddle" type="Node2D" parent="."]
 script = ExtResource("4_lhp5a")
 
-[node name="Sprite2D" type="Sprite2D" parent="enemy2"]
+[node name="Sprite2D" type="Sprite2D" parent="enemyMiddle"]
 
-[node name="enemy3" type="Node2D" parent="."]
+[node name="enemyFar" type="Node2D" parent="."]
 script = ExtResource("5_1lk4q")
 
-[node name="Sprite2D" type="Sprite2D" parent="enemy3"]
+[node name="Sprite2D" type="Sprite2D" parent="enemyFar"]
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
