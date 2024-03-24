@@ -7,6 +7,7 @@ extends Node2D
 @onready var enemyFar = $"enemyFar"
 @onready var enemies = [enemyClose, enemyMiddle, enemyFar]
 @onready var HandInteface = $GUI/HandInterface
+@onready var rng = RandomNumberGenerator.new()
 
 signal visibility(state)
 
@@ -19,7 +20,10 @@ func _ready():
 func player_turn():
 	# check status effect
 	# action
-	if not enemyClose.alive and not enemyMiddle.alive and not enemyFar.alive:
+	for i in range(enemies.size()):
+		if enemies[i].alive == false:
+			enemies.remove_at(i)
+	if enemies.size() == 0:
 		print("victory")
 	# move
 	visibility.emit(false)
@@ -32,7 +36,9 @@ func enemies_turn():
 	if not player.alive:
 		print("defeat")
 	for enemy in enemies:
-		pass
+		match rng.randi_range(0, 1):
+			0: enemy.block()
+			1: enemy.attack()
 	visibility.emit(true)
 
 # turn based combat

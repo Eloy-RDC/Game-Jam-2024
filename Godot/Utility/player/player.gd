@@ -1,5 +1,6 @@
 extends Node2D
 
+var alive = true
 var hp = 40
 var shield = 0
 var nextturn_shield = 0
