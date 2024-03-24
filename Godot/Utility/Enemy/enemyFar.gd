@@ -17,5 +17,5 @@ func attack():
 	pass
 
 
-func take(damage) -> bool:
+func take(_damage) -> bool:
 	return false

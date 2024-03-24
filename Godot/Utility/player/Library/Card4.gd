@@ -9,3 +9,5 @@ var target = "player"
 func use():
 	player.shield += shield
 	player.nextturn_shield += shield
+	#print("Better days ahead")
+	print("Shield + %d x 2" % shield)

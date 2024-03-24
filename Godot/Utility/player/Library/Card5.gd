@@ -10,26 +10,15 @@ var target = "all"
 @onready var player = $"../../Player"
 
 func use():
-	
-	if(enemyClose.shield >0):
-		enemyClose.shield -= damage
-		if (enemyClose.shield<0):
-			enemyClose.hp += enemyClose.shield
-			enemyClose.shield = 0
-	else: enemyClose.hp -= damage
-	
-	if(enemyMiddle.shield >0):
-		enemyMiddle.shield -= damage
-		if (enemyMiddle.shield<0):
-			enemyMiddle.hp += enemyMiddle.shield
-			enemyMiddle.shield = 0
-	else: enemyMiddle.hp -= damage
-	
-	if(enemyFar.shield >0):
-		enemyFar.shield -= damage
-		if (enemyFar.shield<0):
-			enemyFar.hp += enemyFar.shield
-			enemyFar.shield = 0
-	else: enemyFar.hp -= damage
-	
-	player.hp -= damage
+	if enemyClose.alive:
+		enemyClose.take(damage)
+		print("Dealt %f to %s" % [damage, enemyClose])
+	if enemyMiddle.alive:
+		enemyMiddle.take(damage)
+		print("Dealt %f to %s" % [damage, enemyMiddle])
+	#if enemyFar.alive:
+		#enemyFar.like(damage)
+	if player.alive:
+		player.take(damage)
+		print("Dealt %f to %s" % [damage, player])
+	#print("You're at your wits' end and it's their fault")

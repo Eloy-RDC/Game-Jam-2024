@@ -13,7 +13,7 @@ extends Control
 @onready var medieval = $"../../"
 
 
-signal card_used(id)
+signal card_used(card)
 
 
 func _ready():
@@ -25,14 +25,17 @@ func _ready():
 
 func _input(_event):
 	if $HandCard0.is_pressed():
+		print(handCards[0])
 		card_used.emit(handCards[0])
-		print('card 1 used')
+
 	elif $HandCard1.is_pressed():
+		print(handCards[1])
 		card_used.emit(handCards[1])
-		print('card 2 used')
+
 	elif $HandCard2.is_pressed():
+		print(handCards[2])
 		card_used.emit(handCards[2])
-		print('card 3 used')
+
 
 
 func toggle_visibility(state):

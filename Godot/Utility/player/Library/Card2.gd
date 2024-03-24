@@ -10,26 +10,13 @@ var target = "close"
 @onready var player = $"../../Player"
 
 func use():
-	if(enemyClose.alive):
-		if(enemyClose.shield >0):
-			enemyClose.shield -= damage
-			if (enemyClose.shield<0):
-				enemyClose.hp += enemyClose.shield
-				enemyClose.shield = 0
-		else: enemyClose.hp -= damage
-	else:
-		if(enemyMiddle.alive):
-			if(enemyMiddle.shield >0):
-				enemyMiddle.shield -= damage
-				if (enemyMiddle.shield<0):
-					enemyMiddle.hp += enemyMiddle.shield
-					enemyMiddle.shield = 0
-			else: enemyMiddle.hp -= damage
-		else:
-			if(enemyFar.alive):
-				if(enemyFar.shield >0):
-					enemyFar.shield -= damage
-					if (enemyFar.shield<0):
-						enemyFar.hp += enemyFar.shield
-						enemyFar.shield = 0
-				else: enemyFar.hp -= damage
+	#if enemyFar.alive:
+		#if enemyFar.take(damage):
+			#return "Far"
+	#if enemyMiddle.alive:
+		#if enemyMiddle.take(damage):
+			#return "middle"
+	if enemyClose.alive:
+		enemyClose.take(damage)
+		#print("{enemyName} received felt the stern touch of the tie".format([["enemyName", enemyClose.enemy_name]]))
+		print("Dealt %f to %s" % [damage, enemyClose])

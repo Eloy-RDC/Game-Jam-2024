@@ -5,7 +5,7 @@ extends Node2D
 @onready var enemyClose = $"enemyClose"
 @onready var enemyMiddle = $"enemyMiddle"
 @onready var enemyFar = $"enemyFar"
-@onready var enemies = [enemyClose, enemyMiddle, enemyFar]
+@onready var enemies = [enemyClose, enemyMiddle]
 @onready var HandInteface = $GUI/HandInterface
 @onready var rng = RandomNumberGenerator.new()
 
@@ -14,43 +14,34 @@ signal visibility(state)
 
 
 func _ready():
-	while true:
+	#$"/BackGround/Area2D".connect("mouse_over_fish", to_fish_land)
+	#$"/BackGround/Area2D".connect("mouse_over_past", to_knight_land)
+	var loop = true
+	var still_alive = enemies.size()
+	while loop:
+		# player's turn
 		var card = await HandInteface.card_used
-		match card.use():
-			"close": enemies.remove_at(0)
-			"middle": enemies.remove_at(1)
-			"":
+		card.use()
+		# enemy's turn
+		for enemy in enemies:
+			if enemy.alive:
+				enemy.action()
+			else:
+				still_alive -= 1
+			if still_alive == 0:
 				print("w")
-				break
+				get_tree().change_scene_to_file("res://Utility/Worlds/aquatic_world.tscn")
+		if not player.alive:
+			get_tree().change_scene_to_file("res://Utility/Worlds/office_world.tscn")
 
 
-func battle():
-	print('ok')
+func _input(event):
+	if event is InputEventKey:
+		if event.keycode == KEY_M:
+			get_tree().change_scene_to_file("res://Utility/Worlds/office_world.tscn")
+		elif event.keycode == KEY_A:
+			get_tree().change_scene_to_file("res://Utility/Worlds/aquatic_world.tscn")
 
-
-func player_turn():
-	# check status effect
-	# action
-	for i in range(enemies.size()):
-		if enemies[i].alive == false:
-			enemies.remove_at(i)
-	if enemies.size() == 0:
-		print("victory")
-	# move
-	visibility.emit(false)
-	enemies_turn()
-
-
-func enemies_turn():
-	# check status effect
-	# action
-	if not player.alive:
-		print("defeat")
-	for enemy in enemies:
-		match rng.randi_range(0, 1):
-			0: enemy.block()
-			1: enemy.attack()
-	visibility.emit(true)
 
 
 func _on_audio_stream_player_2d_finished():

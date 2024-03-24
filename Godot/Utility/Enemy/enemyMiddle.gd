@@ -1,7 +1,8 @@
 extends Node2D
 
-var alive = true
+@onready var player = $"../Player"
 
+var alive = true
 var enemy_name = "Archer"
 var hp = 15
 var shield = 0
@@ -12,21 +13,24 @@ func _process(_delta):
 
 
 func attack():
-	await get_tree().create_timer(0.3).timeout
-	$Sprite2D.play("attack")
-	await get_tree().create_timer(0.1).timeout
-	%ArrowAnim.play("Arrow")
-	print("{name} attacked".format([["name", enemy_name]]))
+	player.take(attack_points)
+	#print("I'am not the corkboard, dammit !")
 
 
-func take(damage) -> bool:
+func take(damage):
 	if shield > 0:
 		shield -= damage
 		if shield < 0:
-			hp += damage
+			hp += shield
 			shield = 0
 	else:
 		hp -= damage
 	if hp <= 0:
 		alive = false
-	return alive
+	print("--- %s ---" % enemy_name)
+	print("Health : %s" % hp)
+	print("Shield : %s" % shield)
+
+
+func action():
+	attack()

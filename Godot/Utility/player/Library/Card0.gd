@@ -11,14 +11,15 @@ var target = "far"
 @onready var enemyFar = $"../../enemyFar"
 @onready var player = $"../../Player"
 
-func use() -> String:
+func use():
 	#if enemyFar.alive:
 		#if enemyFar.take(damage):
 			#return "Far"
-	if enemyMiddle.alive:
-		if enemyMiddle.take(damage):
-			return "middle"
 	if enemyClose.alive:
-		if enemyClose.take(damage):
-			return "close"
-	return ""
+		enemyClose.take(damage)
+		print("Dealt %f to %s" % [damage, enemyClose])
+		#print("{enemyName} received a scorching email".format([["enemyName", enemyClose.enemy_name]]))
+	if enemyMiddle.alive:
+		enemyMiddle.take(damage)
+		#print("{enemyName} received a scorching email".format([["enemyName", enemyMiddle.enemy_name]]))
+		print("Dealt %f to %s" % [damage, enemyMiddle])

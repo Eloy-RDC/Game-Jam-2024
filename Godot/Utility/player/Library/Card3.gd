@@ -8,3 +8,5 @@ var target = "player"
 
 func use():
 	player.shield += shield
+	#print("You feel stronger")
+	print("Shield + %d" % shield)

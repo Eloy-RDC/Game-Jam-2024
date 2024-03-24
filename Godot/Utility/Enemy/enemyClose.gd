@@ -15,32 +15,28 @@ func _process(_delta):
 
 func block():
 	blocking = true
+	#print("Stop hidding behind that shield !")
 
 
 func attack():
-	$Sprite2D.play("attack")
-	%ImpactAnim.play("impact")
-	if(player.shield > 0):
-		player.shield -= attack_points
-		if (player.shield<0):
-			player.hp += player.shield
-			player.shield = 0
-	else: player.hp -= attack_points
+	player.take(attack_points)
+	#print("Hey ! My new suit !")
 
 
-func take(damage) -> bool:
-	if blocking:
-		return alive
-	if shield > 0:
-		shield -= damage
-		if shield < 0:
-			hp += damage
-			shield = 0
-	else:
-		hp -= damage
-	if hp <= 0:
-		alive = false
-	return alive
+func take(damage):
+	if not  blocking:
+		if shield > 0:
+			shield -= damage
+			if shield < 0:
+				hp += shield
+				shield = 0
+		else:
+			hp -= damage
+		if hp <= 0:
+			alive = false
+		print("--- %s ---" % enemy_name)
+		print("Health : %s" % hp)
+		print("Shield : %s" % shield)
 
 
 func action():
