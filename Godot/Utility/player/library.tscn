@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://5egfsf5cs0r4"]
+[gd_scene load_steps=13 format=3 uid="uid://5egfsf5cs0r4"]
 
 [ext_resource type="Texture2D" uid="uid://cm7g1n6a3qs3n" path="res://Texture/MailTrashTalk.webp" id="1_e8lbh"]
 [ext_resource type="Script" path="res://Utility/player/Library/Card0.gd" id="1_nrhjy"]
@@ -13,19 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://d22qvhrjxtvf4" path="res://Texture/TherapistCall.png" id="10_s7nuh"]
 [ext_resource type="Texture2D" uid="uid://c1dquygh8f3u0" path="res://Texture/MentalBreakDown.png" id="12_pmtlg"]
 
-[sub_resource type="GDScript" id="GDScript_3jf83"]
-script/source = "extends Node2D
-
-var lib
-
-func _ready():
-	lib = get_children()
-"
-
 [node name="Library" type="Node2D"]
 position = Vector2(-149, 113)
 scale = Vector2(1.73817, 1.73306)
-script = SubResource("GDScript_3jf83")
 
 [node name="Card0" type="Node2D" parent="." groups=["attack", "base"]]
 script = ExtResource("1_nrhjy")

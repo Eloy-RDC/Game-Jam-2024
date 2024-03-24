@@ -6,7 +6,7 @@ var shield = 0
 var nextturn_shield = 0
 var player_turn = 0
 
-func _process(delta):
+func _process(_delta):
 	$TextureProgressBar.value = hp
 	$TextureProgressBar2.value = shield
 

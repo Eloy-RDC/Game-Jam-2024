@@ -1,5 +1,6 @@
 extends Node2D
 
+# not implemented
 
 var alive = false
 var enemy_name = "enemyFar"
@@ -14,3 +15,7 @@ func block():
 
 func attack():
 	pass
+
+
+func take(damage) -> bool:
+	return false
