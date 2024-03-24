@@ -27,6 +27,13 @@ func _ready():
 		buttons[i].texture_normal = handCards[i].get_node("Sprite2D").texture
 
 
+func deal_deck():
+	deck.shuffle()
+	for i in range(3):
+		handCards[i] = lib[deck[i]]
+		buttons[i].texture_normal = handCards[i].get_node("Sprite2D").texture
+
+
 func _input(_event):
 	if $HandCard0.is_pressed():
 		print(handCards[0])
