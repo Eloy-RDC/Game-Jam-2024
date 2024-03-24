@@ -15,6 +15,7 @@ func _ready():
 	var still_alive = enemies.size()
 	while loop:
 		# player's turn
+		HandInteface.deal_deck()
 		var card = await HandInteface.card_used
 		card.use()
 		# enemy's turn
