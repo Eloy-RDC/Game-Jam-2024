@@ -61,8 +61,7 @@ max_value = 40.0
 texture_over = ExtResource("6_6pdaw")
 texture_progress = ExtResource("7_rau3j")
 
-[node name="enemy1" type="Node2D" parent="."]
-unique_name_in_owner = true
+[node name="enemyClose" type="Node2D" parent="."]
 script = ExtResource("3_yqnaw")
 
 [node name="Sprite2D" type="Sprite2D" parent="enemy1"]
@@ -123,7 +122,7 @@ texture_progress = ExtResource("4_q8tqi")
 position = Vector2(-315, 244)
 script = ExtResource("5_1lk4q")
 
-[node name="Sprite2D" type="Sprite2D" parent="enemy3"]
+[node name="Sprite2D" type="Sprite2D" parent="enemyFar"]
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
