@@ -7,6 +7,8 @@ var hp = 15
 var shield = 0
 var attack_points = 8
 
+func _process(delta):
+	$TextureProgressBar.value = hp
 
 func block():
 	print("{name} blocked".format([["name", enemy_name]]))

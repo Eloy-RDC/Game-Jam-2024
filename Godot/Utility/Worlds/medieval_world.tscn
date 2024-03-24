@@ -1,20 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://ch4xlgkm7w8oa"]
+[gd_scene load_steps=16 format=3 uid="uid://ch4xlgkm7w8oa"]
 
 [ext_resource type="Script" path="res://Utility/Worlds/medieval_world.gd" id="1_e5cdy"]
 [ext_resource type="Texture2D" uid="uid://cpdubo6y5h8x1" path="res://Texture/Background_Medieval.png" id="1_ujhnf"]
 [ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/player/player.tscn" id="2_wslm8"]
-[ext_resource type="Script" path="res://Utility/player/player.gd" id="3_7neu1"]
-[ext_resource type="Texture2D" uid="uid://jnn2kvjs2m70" path="res://Texture/HpBar.png" id="3_m43u7"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy1.gd" id="3_yqnaw"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy2.gd" id="4_lhp5a"]
 [ext_resource type="Texture2D" uid="uid://ijq7ng2d01ma" path="res://Texture/knight.png" id="4_osdum"]
 [ext_resource type="Script" path="res://Utility/player/player.gd" id="4_rqmbv"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy3.gd" id="5_1lk4q"]
-[ext_resource type="Texture2D" uid="uid://df6otberishf5" path="res://Texture/ShieldBar-export.png" id="6_6pdaw"]
+[ext_resource type="Texture2D" uid="uid://jnn2kvjs2m70" path="res://Texture/HpBar.png" id="5_4573t"]
 [ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="6_jhh7g"]
+[ext_resource type="Texture2D" uid="uid://cxbxi5l5a2841" path="res://Texture/HpBarProgress.png" id="6_mxxyp"]
 [ext_resource type="Texture2D" uid="uid://bvk8y1mqpchn7" path="res://Texture/Archer.png" id="6_ni8x3"]
+[ext_resource type="Texture2D" uid="uid://df6otberishf5" path="res://Texture/ShieldBar-export.png" id="7_gsab4"]
 [ext_resource type="PackedScene" uid="uid://5egfsf5cs0r4" path="res://Utility/player/library.tscn" id="7_qycw8"]
-[ext_resource type="Texture2D" uid="uid://b8h85epj3xogm" path="res://Texture/shieldBarProgress.png" id="7_rau3j"]
+[ext_resource type="Texture2D" uid="uid://b8h85epj3xogm" path="res://Texture/shieldBarProgress.png" id="8_6diw4"]
 
 [node name="MedievalWorld" type="Node2D"]
 script = ExtResource("1_e5cdy")
@@ -35,8 +35,28 @@ scale = Vector2(0.660417, 0.678704)
 texture = ExtResource("1_ujhnf")
 
 [node name="Player" parent="." instance=ExtResource("2_wslm8")]
-position = Vector2(255, 401)
+position = Vector2(351, 402)
 script = ExtResource("4_rqmbv")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Player"]
+offset_left = -65.0
+offset_top = -140.0
+offset_right = -1.0
+offset_bottom = -76.0
+scale = Vector2(2, 2)
+max_value = 40.0
+texture_over = ExtResource("5_4573t")
+texture_progress = ExtResource("6_mxxyp")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Player"]
+offset_left = -67.0
+offset_top = -185.0
+offset_right = -3.0
+offset_bottom = -121.0
+scale = Vector2(2, 2)
+max_value = 20.0
+texture_over = ExtResource("7_gsab4")
+texture_progress = ExtResource("8_6diw4")
 
 [node name="enemyClose" type="Node2D" parent="."]
 script = ExtResource("3_yqnaw")
@@ -46,6 +66,26 @@ position = Vector2(647, 381)
 scale = Vector2(3.27344, 2.94531)
 texture = ExtResource("4_osdum")
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="enemyClose"]
+offset_left = 578.0
+offset_top = 226.0
+offset_right = 642.0
+offset_bottom = 290.0
+scale = Vector2(2, 2)
+max_value = 40.0
+texture_over = ExtResource("5_4573t")
+texture_progress = ExtResource("6_mxxyp")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="enemyClose"]
+offset_left = 577.0
+offset_top = 195.0
+offset_right = 641.0
+offset_bottom = 259.0
+scale = Vector2(2, 2)
+max_value = 40.0
+texture_over = ExtResource("7_gsab4")
+texture_progress = ExtResource("8_6diw4")
+
 [node name="enemyMiddle" type="Node2D" parent="."]
 position = Vector2(-4, -93)
 script = ExtResource("4_lhp5a")
@@ -54,6 +94,16 @@ script = ExtResource("4_lhp5a")
 position = Vector2(770, 480)
 scale = Vector2(2.71875, 2.47656)
 texture = ExtResource("6_ni8x3")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="enemyMiddle"]
+offset_left = 712.0
+offset_top = 319.0
+offset_right = 776.0
+offset_bottom = 383.0
+scale = Vector2(2, 2)
+max_value = 15.0
+texture_over = ExtResource("5_4573t")
+texture_progress = ExtResource("6_mxxyp")
 
 [node name="enemyFar" type="Node2D" parent="."]
 position = Vector2(-315, 244)
