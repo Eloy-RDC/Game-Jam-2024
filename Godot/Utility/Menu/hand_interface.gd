@@ -5,7 +5,7 @@ extends Control
 @onready var deck = [0, 1, 2, 3, 4, 5]
 @onready var hand = []
 @onready var handCards = []
-@onready var buttons = [$HandCard1, $HandCard2, $HandCard0]
+@onready var buttons = [$HandCard0, $HandCard1, $HandCard2]
 @onready var enemyClose = $"../../enemyClose"
 @onready var enemyMiddle = $"../../enemyMiddle"
 @onready var enemyFar = $"../../enemyFar"
@@ -18,8 +18,12 @@ signal card_used(card)
 
 func _ready():
 	deck.shuffle()
+	print(deck)
 	for i in range(3):
 		handCards.append(lib[deck[i]])
+		print(handCards)
+		print(handCards[i])
+		print(buttons[i])
 		buttons[i].texture_normal = handCards[i].get_node("Sprite2D").texture
 
 

@@ -23,14 +23,16 @@ func _ready():
 		var card = await HandInteface.card_used
 		card.use()
 		# enemy's turn
+		var count = 0
 		for enemy in enemies:
 			if enemy.alive:
+				await get_tree().create_timer(0.5).timeout
 				enemy.action()
-			else:
-				still_alive -= 1
-			if still_alive == 0:
-				print("w")
-				get_tree().change_scene_to_file("res://Utility/Worlds/aquatic_world.tscn")
+			if enemy.alive == false:
+				enemy.hide()
+				count += 1
+		if count == 2:
+			get_tree().change_scene_to_file("res://Utility/Worlds/aquatic_world.tscn")
 		if not player.alive:
 			get_tree().change_scene_to_file("res://Utility/Worlds/office_world.tscn")
 

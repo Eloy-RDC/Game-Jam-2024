@@ -13,6 +13,8 @@ func _process(_delta):
 
 
 func attack():
+	$Sprite2D.play("attack")
+	$"../Player/ArrowAnim".play("Arrow")
 	player.take(attack_points)
 	#print("I'am not the corkboard, dammit !")
 
