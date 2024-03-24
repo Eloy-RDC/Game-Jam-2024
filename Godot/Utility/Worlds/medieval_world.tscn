@@ -1,37 +1,55 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch4xlgkm7w8oa"]
+[gd_scene load_steps=10 format=3 uid="uid://ch4xlgkm7w8oa"]
 
-[ext_resource type="Texture2D" uid="uid://cxecgkl57cnmu" path="res://Texture/STSLev2-BruceBrenneise.jpg" id="1_chn7i"]
+[ext_resource type="Texture2D" uid="uid://cpdubo6y5h8x1" path="res://Texture/Background_Medieval.png" id="1_ujhnf"]
 [ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/player/player.tscn" id="2_wslm8"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy1.gd" id="3_yqnaw"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy2.gd" id="4_lhp5a"]
+[ext_resource type="Texture2D" uid="uid://ijq7ng2d01ma" path="res://Texture/knight.png" id="4_osdum"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy3.gd" id="5_1lk4q"]
 [ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="6_jhh7g"]
+[ext_resource type="Texture2D" uid="uid://bvk8y1mqpchn7" path="res://Texture/Archer.png" id="6_ni8x3"]
 [ext_resource type="PackedScene" uid="uid://5egfsf5cs0r4" path="res://Utility/player/library.tscn" id="7_qycw8"]
 
 [node name="MedievalWorld" type="Node2D"]
-metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1028.0
+offset_top = -724.0
+offset_right = 3972.0
+offset_bottom = 4276.0
+color = Color(0.0862745, 0.227451, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 310)
 
 [node name="BackGround" type="Sprite2D" parent="."]
-position = Vector2(581, 329)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_chn7i")
-metadata/_edit_lock_ = true
+position = Vector2(570, 123)
+scale = Vector2(0.660417, 0.678704)
+texture = ExtResource("1_ujhnf")
 
 [node name="Player" parent="." instance=ExtResource("2_wslm8")]
-metadata/_edit_lock_ = true
+position = Vector2(255, 401)
 
 [node name="enemy1" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_yqnaw")
 
 [node name="Sprite2D" type="Sprite2D" parent="enemy1"]
+position = Vector2(647, 381)
+scale = Vector2(3.27344, 2.94531)
+texture = ExtResource("4_osdum")
 
 [node name="enemy2" type="Node2D" parent="."]
+position = Vector2(-4, -93)
 script = ExtResource("4_lhp5a")
 
 [node name="Sprite2D" type="Sprite2D" parent="enemy2"]
+position = Vector2(770, 480)
+scale = Vector2(2.71875, 2.47656)
+texture = ExtResource("6_ni8x3")
 
 [node name="enemy3" type="Node2D" parent="."]
+position = Vector2(-315, 244)
 script = ExtResource("5_1lk4q")
 
 [node name="Sprite2D" type="Sprite2D" parent="enemy3"]
@@ -39,6 +57,12 @@ script = ExtResource("5_1lk4q")
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="HandInterface" parent="GUI" instance=ExtResource("6_jhh7g")]
+offset_left = 46.0
+offset_top = -153.0
+offset_right = -28.0
+offset_bottom = 79.0
 
 [node name="Library" parent="." instance=ExtResource("7_qycw8")]
 unique_name_in_owner = true
+position = Vector2(1387, -264)
+scale = Vector2(2.17444, 1.73306)

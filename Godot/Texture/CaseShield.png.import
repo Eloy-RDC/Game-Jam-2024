@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://46bt4s75000k"
-path="res://.godot/imported/CardTemplate.webp-c17f71de923e11ff20254a9dd32d3c17.ctex"
+uid="uid://cl234qsfacfv0"
+path="res://.godot/imported/CaseShield.png-cf70e03acf796d8da8eccdbcb0890a1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/CardTemplate.webp"
-dest_files=["res://.godot/imported/CardTemplate.webp-c17f71de923e11ff20254a9dd32d3c17.ctex"]
+source_file="res://Texture/CaseShield.png"
+dest_files=["res://.godot/imported/CaseShield.png-cf70e03acf796d8da8eccdbcb0890a1a.ctex"]
 
 [params]
 

@@ -13,8 +13,6 @@ extends Control
 
 
 func _ready():
-	show()
-	print(lib)
 	deck.shuffle()
 	for i in range(3):
 		handCards.append(lib[deck[i]])
@@ -22,9 +20,7 @@ func _ready():
 
 
 func _on_hand_card_1_pressed():
-	print(enemy1.hp)
-	lib[1].use()
-	print(enemy1.hp)
+	handCards[0].use()
 	hide()
 
 
