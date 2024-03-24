@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://5egfsf5cs0r4"]
 
 [ext_resource type="Texture2D" uid="uid://cm7g1n6a3qs3n" path="res://Texture/MailTrashTalk.webp" id="1_e8lbh"]
-[ext_resource type="Script" path="res://Utility/Player/Library/Card0.gd" id="1_nrhjy"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card0.gd" id="1_nrhjy"]
 [ext_resource type="Texture2D" uid="uid://bf3mguako62aa" path="res://Texture/ThrowingCase.png" id="2_24p17"]
-[ext_resource type="Script" path="res://Utility/Player/Library/Card1.gd" id="3_h61k0"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card1.gd" id="3_h61k0"]
 [ext_resource type="Texture2D" uid="uid://cjyecumttysh0" path="res://Texture/TieWhip.webp" id="3_vovbk"]
 [ext_resource type="Script" path="res://Utility/player/Library/Card2.gd" id="5_n3mxt"]
 [ext_resource type="Script" path="res://Utility/player/Library/Card3.gd" id="7_34f2n"]
@@ -31,6 +31,7 @@ script = SubResource("GDScript_3jf83")
 script = ExtResource("1_nrhjy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card0"]
+position = Vector2(-60.4082, 81.9361)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_e8lbh")
 
@@ -38,28 +39,34 @@ texture = ExtResource("1_e8lbh")
 script = ExtResource("3_h61k0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card1"]
+position = Vector2(-64.4354, -2.88507)
 texture = ExtResource("2_24p17")
 
 [node name="Card2" type="Node2D" parent="."]
 script = ExtResource("5_n3mxt")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card2"]
+position = Vector2(-127.72, 64.6257)
 texture = ExtResource("3_vovbk")
 
 [node name="Card3" type="Node2D" parent="."]
 script = ExtResource("7_34f2n")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card3"]
+position = Vector2(-126.57, -4.61612)
 texture = ExtResource("8_xryda")
 
 [node name="Card4" type="Node2D" parent="."]
 script = ExtResource("9_mkfb1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card4"]
+position = Vector2(-200.21, 61.1636)
 texture = ExtResource("10_s7nuh")
 
 [node name="Card5" type="Node2D" parent="."]
+position = Vector2(-109.885, 4.61612)
 script = ExtResource("10_gdv2p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card5"]
+position = Vector2(-87.4481, -12.1173)
 texture = ExtResource("12_pmtlg")

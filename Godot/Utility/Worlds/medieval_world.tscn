@@ -3,14 +3,18 @@
 [ext_resource type="Script" path="res://Utility/Worlds/medieval_world.gd" id="1_e5cdy"]
 [ext_resource type="Texture2D" uid="uid://cpdubo6y5h8x1" path="res://Texture/Background_Medieval.png" id="1_ujhnf"]
 [ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/player/player.tscn" id="2_wslm8"]
+[ext_resource type="Script" path="res://Utility/player/player.gd" id="3_7neu1"]
+[ext_resource type="Texture2D" uid="uid://jnn2kvjs2m70" path="res://Texture/HpBar.png" id="3_m43u7"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy1.gd" id="3_yqnaw"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy2.gd" id="4_lhp5a"]
 [ext_resource type="Texture2D" uid="uid://ijq7ng2d01ma" path="res://Texture/knight.png" id="4_osdum"]
 [ext_resource type="Script" path="res://Utility/player/player.gd" id="4_rqmbv"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy3.gd" id="5_1lk4q"]
+[ext_resource type="Texture2D" uid="uid://df6otberishf5" path="res://Texture/ShieldBar-export.png" id="6_6pdaw"]
 [ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="6_jhh7g"]
 [ext_resource type="Texture2D" uid="uid://bvk8y1mqpchn7" path="res://Texture/Archer.png" id="6_ni8x3"]
 [ext_resource type="PackedScene" uid="uid://5egfsf5cs0r4" path="res://Utility/player/library.tscn" id="7_qycw8"]
+[ext_resource type="Texture2D" uid="uid://b8h85epj3xogm" path="res://Texture/shieldBarProgress.png" id="7_rau3j"]
 
 [node name="MedievalWorld" type="Node2D"]
 script = ExtResource("1_e5cdy")
@@ -68,5 +72,5 @@ offset_bottom = 79.0
 
 [node name="Library" parent="." instance=ExtResource("7_qycw8")]
 unique_name_in_owner = true
-position = Vector2(1387, -264)
+position = Vector2(-249, -256)
 scale = Vector2(2.17444, 1.73306)

@@ -7,6 +7,10 @@ var shield = 15
 var attack_points = 2
 @onready var player = $"../Player"
  
+func _process(delta):
+	$TextureProgressBar.value = hp
+	$TextureProgressBar2.value = shield
+
 func block():
 	pass
 
