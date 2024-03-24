@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://8fsr518e0xvh" path="res://Texture/Wall.png" id="2_o3gq3"]
 [ext_resource type="Texture2D" uid="uid://cmf3cfh77aqr2" path="res://Texture/office.webp" id="2_yhiln"]
 [ext_resource type="Texture2D" uid="uid://due55xagumt4c" path="res://Texture/blbobolbolbob.webp" id="4_flvrg"]
-[ext_resource type="Script" path="res://Utility/Menu/Area2D.gd" id="4_rs68q"]
 [ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/player/player.tscn" id="5_akvvl"]
+[ext_resource type="Script" path="res://Utility/Menu/to_fish_land.gd" id="5_jmfyj"]
 [ext_resource type="Script" path="res://Utility/player/player.gd" id="6_jjr2k"]
 [ext_resource type="Texture2D" uid="uid://jnn2kvjs2m70" path="res://Texture/HpBar.png" id="7_5xrn0"]
+[ext_resource type="Script" path="res://Utility/Menu/to_knight_land.gd" id="7_qkt5r"]
 [ext_resource type="Texture2D" uid="uid://cxbxi5l5a2841" path="res://Texture/HpBarProgress.png" id="8_ghddb"]
 [ext_resource type="Texture2D" uid="uid://df6otberishf5" path="res://Texture/ShieldBar-export.png" id="9_m8rjk"]
 [ext_resource type="Texture2D" uid="uid://b8h85epj3xogm" path="res://Texture/shieldBarProgress.png" id="10_btko8"]
@@ -20,9 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="17_vkikb"]
 [ext_resource type="PackedScene" uid="uid://5egfsf5cs0r4" path="res://Utility/player/library.tscn" id="18_kg3x8"]
 [ext_resource type="AudioStream" uid="uid://b2gf6y1e2j5qq" path="res://Audio/mini_adventure_overworld.mp3" id="19_4thax"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_71586"]
-size = Vector2(3.9802, 0.574146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5nh2"]
 atlas = ExtResource("11_13lkq")
@@ -223,20 +221,26 @@ position = Vector2(570, 300)
 scale = Vector2(2.06223, 1.59205)
 texture = ExtResource("2_yhiln")
 
-[node name="Area2D" type="Area2D" parent="BackGround"]
-position = Vector2(140.624, -10.0499)
-scale = Vector2(12.5486, 45.9483)
-script = ExtResource("4_rs68q")
+[node name="to_fish_land" type="Button" parent="BackGround"]
+offset_left = 177.478
+offset_top = -55.2746
+offset_right = 245.478
+offset_bottom = 12.7254
+rotation = 3.14159
+scale = Vector2(0.714705, -0.361838)
+icon = ExtResource("4_flvrg")
+flat = true
+script = ExtResource("5_jmfyj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BackGround/Area2D"]
-position = Vector2(0.946747, -0.724518)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_71586")
-
-[node name="Sprite2D" type="Sprite2D" parent="BackGround"]
-position = Vector2(151.292, -42.0841)
-scale = Vector2(0.423176, 0.311265)
-texture = ExtResource("4_flvrg")
+[node name="to_knight_land" type="Button" parent="BackGround"]
+offset_left = -51.8855
+offset_top = -55.9027
+offset_right = -43.8855
+offset_bottom = -47.9027
+scale = Vector2(0.668204, 0.384991)
+icon = ExtResource("14_t814u")
+flat = true
+script = ExtResource("7_qkt5r")
 
 [node name="Player" parent="." instance=ExtResource("5_akvvl")]
 position = Vector2(358, 391)
