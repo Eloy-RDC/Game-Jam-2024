@@ -1,14 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch4xlgkm7w8oa"]
+[gd_scene load_steps=15 format=3 uid="uid://ch4xlgkm7w8oa"]
 
 [ext_resource type="Texture2D" uid="uid://cpdubo6y5h8x1" path="res://Texture/Background_Medieval.png" id="1_ujhnf"]
 [ext_resource type="PackedScene" uid="uid://cd08rjf45ahrc" path="res://Utility/player/player.tscn" id="2_wslm8"]
+[ext_resource type="Script" path="res://Utility/player/player.gd" id="3_7neu1"]
+[ext_resource type="Texture2D" uid="uid://jnn2kvjs2m70" path="res://Texture/HpBar.png" id="3_m43u7"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy1.gd" id="3_yqnaw"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy2.gd" id="4_lhp5a"]
 [ext_resource type="Texture2D" uid="uid://ijq7ng2d01ma" path="res://Texture/knight.png" id="4_osdum"]
+[ext_resource type="Texture2D" uid="uid://cxbxi5l5a2841" path="res://Texture/HpBarProgress.png" id="4_q8tqi"]
 [ext_resource type="Script" path="res://Utility/Enemy/enemy3.gd" id="5_1lk4q"]
+[ext_resource type="Texture2D" uid="uid://df6otberishf5" path="res://Texture/ShieldBar-export.png" id="6_6pdaw"]
 [ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="6_jhh7g"]
 [ext_resource type="Texture2D" uid="uid://bvk8y1mqpchn7" path="res://Texture/Archer.png" id="6_ni8x3"]
 [ext_resource type="PackedScene" uid="uid://5egfsf5cs0r4" path="res://Utility/player/library.tscn" id="7_qycw8"]
+[ext_resource type="Texture2D" uid="uid://b8h85epj3xogm" path="res://Texture/shieldBarProgress.png" id="7_rau3j"]
 
 [node name="MedievalWorld" type="Node2D"]
 
@@ -29,6 +34,32 @@ texture = ExtResource("1_ujhnf")
 
 [node name="Player" parent="." instance=ExtResource("2_wslm8")]
 position = Vector2(255, 401)
+script = ExtResource("3_7neu1")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Player"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -180.0
+offset_right = 14.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+max_value = 40.0
+texture_over = ExtResource("3_m43u7")
+texture_progress = ExtResource("4_q8tqi")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Player"]
+offset_left = -49.0
+offset_top = -208.0
+offset_right = 15.0
+offset_bottom = -144.0
+scale = Vector2(2, 2)
+max_value = 40.0
+texture_over = ExtResource("6_6pdaw")
+texture_progress = ExtResource("7_rau3j")
 
 [node name="enemy1" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -39,6 +70,31 @@ position = Vector2(647, 381)
 scale = Vector2(3.27344, 2.94531)
 texture = ExtResource("4_osdum")
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="enemy1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 582.0
+offset_top = 220.0
+offset_right = 646.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+max_value = 40.0
+texture_over = ExtResource("3_m43u7")
+texture_progress = ExtResource("4_q8tqi")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="enemy1"]
+offset_left = 582.0
+offset_top = 194.0
+offset_right = 646.0
+offset_bottom = 258.0
+scale = Vector2(2, 2)
+max_value = 40.0
+texture_over = ExtResource("6_6pdaw")
+texture_progress = ExtResource("7_rau3j")
+
 [node name="enemy2" type="Node2D" parent="."]
 position = Vector2(-4, -93)
 script = ExtResource("4_lhp5a")
@@ -47,6 +103,21 @@ script = ExtResource("4_lhp5a")
 position = Vector2(770, 480)
 scale = Vector2(2.71875, 2.47656)
 texture = ExtResource("6_ni8x3")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="enemy2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 711.0
+offset_top = 314.0
+offset_right = 775.0
+offset_bottom = 378.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+max_value = 15.0
+texture_over = ExtResource("3_m43u7")
+texture_progress = ExtResource("4_q8tqi")
 
 [node name="enemy3" type="Node2D" parent="."]
 position = Vector2(-315, 244)
@@ -64,5 +135,5 @@ offset_bottom = 79.0
 
 [node name="Library" parent="." instance=ExtResource("7_qycw8")]
 unique_name_in_owner = true
-position = Vector2(1387, -264)
+position = Vector2(-249, -256)
 scale = Vector2(2.17444, 1.73306)

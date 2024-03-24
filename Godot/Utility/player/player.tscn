@@ -1,58 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd08rjf45ahrc"]
+[gd_scene load_steps=5 format=3 uid="uid://cd08rjf45ahrc"]
 
-[ext_resource type="Texture2D" uid="uid://bre2x3502585a" path="res://Texture/WorkerIdle-Sheet.png" id="1_85o6c"]
+[ext_resource type="Texture2D" uid="uid://dhkvctyhcvl1y" path="res://Texture/SalaryMan.png" id="1_5i034"]
+[ext_resource type="Script" path="res://Utility/player/player.gd" id="1_lrax2"]
 
-[sub_resource type="GDScript" id="GDScript_77saw"]
-script/source = "extends Node2D
-
-var hp = 40
-var shield = 0
-var nextturn_shield = 0
-var player_turn = 0
-
-func are_nextturn_shield():
-	if nextturn_shield > 0:
-		shield += nextturn_shield
-		nextturn_shield = 0
-
-
-# turn based combat
-func battle():
-	var victory = 0 # 1 = player wins; -1 = player loses
-	while victory == 0:
-		
-		# player's turn
-		pass
-"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pq8hl"]
-atlas = ExtResource("1_85o6c")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xesv4"]
+atlas = ExtResource("1_5i034")
 region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vnrpj"]
-atlas = ExtResource("1_85o6c")
-region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5tcxd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pq8hl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vnrpj")
+"texture": SubResource("AtlasTexture_xesv4")
 }],
 "loop": true,
-"name": &"player_idle",
-"speed": 2.0
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="Player" type="Node2D"]
-script = SubResource("GDScript_77saw")
+script = ExtResource("1_lrax2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5tcxd")
-animation = &"player_idle"
-autoplay = "player_idle"
-flip_h = true
+animation = &"new_animation"
