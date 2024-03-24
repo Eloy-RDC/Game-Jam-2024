@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dxftr7at571rb"]
+[gd_scene load_steps=37 format=3 uid="uid://dxftr7at571rb"]
 
 [ext_resource type="Script" path="res://Utility/Worlds/medieval_world.gd" id="1_ymiyk"]
 [ext_resource type="Texture2D" uid="uid://8fsr518e0xvh" path="res://Texture/Wall.png" id="2_o3gq3"]
@@ -14,13 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://b8h85epj3xogm" path="res://Texture/shieldBarProgress.png" id="10_btko8"]
 [ext_resource type="Texture2D" uid="uid://dcc63xi8kndum" path="res://Texture/HitAnim.png" id="11_13lkq"]
 [ext_resource type="Texture2D" uid="uid://rjmrknxqlt77" path="res://Texture/small_sting-Sheet.png" id="12_1ebtg"]
-[ext_resource type="Texture2D" uid="uid://bwmj5hewd0apy" path="res://Texture/Knight-Sheet-Sheet.png" id="13_i888d"]
 [ext_resource type="Texture2D" uid="uid://ijq7ng2d01ma" path="res://Texture/knight.png" id="14_t814u"]
-[ext_resource type="Texture2D" uid="uid://cvy51qhhiifvg" path="res://Texture/Archer-Sheet.png" id="15_dqe6w"]
-[ext_resource type="Texture2D" uid="uid://bvk8y1mqpchn7" path="res://Texture/Archer.png" id="16_6ki8g"]
+[ext_resource type="Script" path="res://Utility/Enemy/enemyClose - water.gd" id="16_a6qy4"]
 [ext_resource type="PackedScene" uid="uid://cq1a2utcib7oo" path="res://Utility/Menu/hand_interface.tscn" id="17_vkikb"]
+[ext_resource type="Texture2D" uid="uid://ga8w5fstohgn" path="res://Texture/grlmrglbrlmbrm.webp" id="17_vu850"]
+[ext_resource type="Script" path="res://Utility/Enemy/enemyMiddle - water.gd" id="18_brqjj"]
 [ext_resource type="PackedScene" uid="uid://5egfsf5cs0r4" path="res://Utility/player/library.tscn" id="18_kg3x8"]
 [ext_resource type="AudioStream" uid="uid://b2gf6y1e2j5qq" path="res://Audio/mini_adventure_overworld.mp3" id="19_4thax"]
+[ext_resource type="Texture2D" uid="uid://wp1h7k48xdvq" path="res://Texture/mlemmlem.webp" id="19_ejhlc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5nh2"]
 atlas = ExtResource("11_13lkq")
@@ -122,86 +123,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_un56l"]
-atlas = ExtResource("13_i888d")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_27vja"]
-atlas = ExtResource("13_i888d")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xa3h5"]
-atlas = ExtResource("13_i888d")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_v842t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_un56l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_27vja")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xa3h5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_t814u")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_t814u")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_piyfm"]
-atlas = ExtResource("15_dqe6w")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t4kqg"]
-atlas = ExtResource("15_dqe6w")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aosv5"]
-atlas = ExtResource("15_dqe6w")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8e1r1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_piyfm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t4kqg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aosv5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_6ki8g")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_6ki8g")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
-
 [node name="OfficeWorld" type="Node2D"]
 script = ExtResource("1_ymiyk")
 
@@ -289,12 +210,12 @@ frame_progress = 1.0
 
 [node name="enemyClose" type="Node2D" parent="."]
 visible = false
+script = ExtResource("16_a6qy4")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="enemyClose"]
+[node name="Sprite2D" type="Sprite2D" parent="enemyClose"]
 position = Vector2(647, 381)
 scale = Vector2(3.27344, 2.94531)
-sprite_frames = SubResource("SpriteFrames_v842t")
-animation = &"attack"
+texture = ExtResource("17_vu850")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="enemyClose"]
 offset_left = 578.0
@@ -319,14 +240,12 @@ texture_progress = ExtResource("10_btko8")
 [node name="enemyMiddle" type="Node2D" parent="."]
 visible = false
 position = Vector2(-4, -93)
+script = ExtResource("18_brqjj")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="enemyMiddle"]
+[node name="Sprite2D" type="Sprite2D" parent="enemyMiddle"]
 position = Vector2(770, 480)
 scale = Vector2(2.71875, 2.47656)
-sprite_frames = SubResource("SpriteFrames_8e1r1")
-animation = &"attack"
-frame = 3
-frame_progress = 1.0
+texture = ExtResource("19_ejhlc")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="enemyMiddle"]
 offset_left = 712.0

@@ -6,7 +6,6 @@ var damage = 1
 var target = "all"
 @onready var enemyClose = $"../../enemyClose"
 @onready var enemyMiddle = $"../../enemyMiddle"
-@onready var enemyFar = $"../../enemyFar"
 @onready var player = $"../../Player"
 
 func use():
