@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxecgkl57cnmu"
-path="res://.godot/imported/STSLev2-BruceBrenneise.jpg-c07a60bf739e3b3574b40a260cd61cb7.ctex"
+uid="uid://nfqfuuno2tbh"
+path="res://.godot/imported/Background_temporaire.png-1095b832a022faa9b78e64313fa0bca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Texture/STSLev2-BruceBrenneise.jpg"
-dest_files=["res://.godot/imported/STSLev2-BruceBrenneise.jpg-c07a60bf739e3b3574b40a260cd61cb7.ctex"]
+source_file="res://Texture/Background_temporaire.png"
+dest_files=["res://.godot/imported/Background_temporaire.png-1095b832a022faa9b78e64313fa0bca3.ctex"]
 
 [params]
 

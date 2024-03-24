@@ -29,6 +29,7 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
+stretch_mode = 0
 
 [node name="HandCard2" type="TextureButton" parent="."]
 layout_mode = 1
@@ -44,6 +45,7 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
+stretch_mode = 0
 
 [node name="HandCard3" type="TextureButton" parent="."]
 layout_mode = 1
@@ -59,6 +61,7 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
+stretch_mode = 0
 
 [connection signal="pressed" from="HandCard1" to="." method="_on_hand_card_1_pressed"]
 [connection signal="pressed" from="HandCard2" to="." method="_on_hand_card_2_pressed"]

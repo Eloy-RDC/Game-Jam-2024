@@ -16,7 +16,6 @@ signal card_used
 
 
 func _ready():
-	print(lib)
 	deck.shuffle()
 	for i in range(3):
 		handCards.append(lib[deck[i]])

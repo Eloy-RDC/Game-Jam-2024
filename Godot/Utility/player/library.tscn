@@ -1,15 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://5egfsf5cs0r4"]
+[gd_scene load_steps=14 format=3 uid="uid://5egfsf5cs0r4"]
 
 [ext_resource type="Texture2D" uid="uid://cm7g1n6a3qs3n" path="res://Texture/MailTrashTalk.webp" id="1_e8lbh"]
 [ext_resource type="Script" path="res://Utility/Player/Library/Card0.gd" id="1_nrhjy"]
 [ext_resource type="Texture2D" uid="uid://bf3mguako62aa" path="res://Texture/ThrowingCase.png" id="2_24p17"]
 [ext_resource type="Script" path="res://Utility/Player/Library/Card1.gd" id="3_h61k0"]
 [ext_resource type="Texture2D" uid="uid://cjyecumttysh0" path="res://Texture/TieWhip.webp" id="3_vovbk"]
-[ext_resource type="Texture2D" uid="uid://46bt4s75000k" path="res://Texture/CardTemplate.webp" id="4_rvp6w"]
-[ext_resource type="Script" path="res://Utility/Player/Library/Card2.gd" id="5_n3mxt"]
-[ext_resource type="Script" path="res://Utility/Player/Library/Card3.gd" id="7_34f2n"]
-[ext_resource type="Script" path="res://Utility/Player/Library/Card4.gd" id="9_mkfb1"]
-[ext_resource type="Script" path="res://Utility/Player/Library/Card5.gd" id="10_gdv2p"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card2.gd" id="5_n3mxt"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card3.gd" id="7_34f2n"]
+[ext_resource type="Texture2D" uid="uid://cl234qsfacfv0" path="res://Texture/CaseShield.png" id="8_xryda"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card4.gd" id="9_mkfb1"]
+[ext_resource type="Script" path="res://Utility/player/Library/Card5.gd" id="10_gdv2p"]
+[ext_resource type="Texture2D" uid="uid://d22qvhrjxtvf4" path="res://Texture/TherapistCall.png" id="10_s7nuh"]
+[ext_resource type="Texture2D" uid="uid://c1dquygh8f3u0" path="res://Texture/MentalBreakDown.png" id="12_pmtlg"]
 
 [sub_resource type="GDScript" id="GDScript_3jf83"]
 script/source = "extends Node2D
@@ -21,12 +23,15 @@ func _ready():
 "
 
 [node name="Library" type="Node2D"]
+position = Vector2(-149, 113)
+scale = Vector2(1.73817, 1.73306)
 script = SubResource("GDScript_3jf83")
 
 [node name="Card0" type="Node2D" parent="." groups=["attack", "base"]]
 script = ExtResource("1_nrhjy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card0"]
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_e8lbh")
 
 [node name="Card1" type="Node2D" parent="."]
@@ -45,16 +50,16 @@ texture = ExtResource("3_vovbk")
 script = ExtResource("7_34f2n")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card3"]
-texture = ExtResource("4_rvp6w")
+texture = ExtResource("8_xryda")
 
 [node name="Card4" type="Node2D" parent="."]
 script = ExtResource("9_mkfb1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card4"]
-texture = ExtResource("4_rvp6w")
+texture = ExtResource("10_s7nuh")
 
 [node name="Card5" type="Node2D" parent="."]
 script = ExtResource("10_gdv2p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Card5"]
-texture = ExtResource("4_rvp6w")
+texture = ExtResource("12_pmtlg")
